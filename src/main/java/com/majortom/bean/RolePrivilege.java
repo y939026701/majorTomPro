@@ -1,27 +1,32 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class RolePrivilege {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long roleId;
-  private long privilegeId;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="role_privilege" )
+public class RolePrivilege  implements Serializable {
 
+	private static final long serialVersionUID =  8357301819929642730L;
 
-  public long getRoleId() {
-    return roleId;
-  }
+   	@Column(value = "role_id" )
+	private Long roleId;
 
-  public void setRoleId(long roleId) {
-    this.roleId = roleId;
-  }
-
-
-  public long getPrivilegeId() {
-    return privilegeId;
-  }
-
-  public void setPrivilegeId(long privilegeId) {
-    this.privilegeId = privilegeId;
-  }
+   	@Column(value = "privilege_id" )
+	private Long privilegeId;
 
 }

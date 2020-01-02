@@ -1,149 +1,81 @@
 package com.majortom.bean;
 
-
 import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-import java.util.List;
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-public class User {
-  @Column("user_id")
-  private long userId;
-  @Column("user_name")
-  private String userName;
-  private long gender;
-  private long age;
-  private java.util.Date birthday;
-  private String tel;
-  private String email;
-  private String address;
-  @Column("id_num")
-  private String idNum;
-  /**
-   * 权限列表
-   */
-  private List<Privilege> privileges;
-  /**
-   *  菜单列表
-   */
-  private List<Menu> menus;
-  /**
-   * 文件夹列表
-   */
-  private List<Folder> folders;
-  /**
-   * 页面列表
-   */
-  private List<PageElements> pageElements;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="user" )
+public class User  implements Serializable {
 
-  public long getUserId() {
-    return userId;
-  }
+	private static final long serialVersionUID =  3885275449516477081L;
 
-  public void setUserId(long userId) {
-    this.userId = userId;
-  }
+	/**
+	 * 用户id
+	 */
+   	@Column(value = "user_id" )
+	private Long userId;
 
+	/**
+	 * 用户名称
+	 */
+   	@Column(value = "user_name" )
+	private String userName;
 
-  public String getUserName() {
-    return userName;
-  }
+	/**
+	 * 用户性别
+	 */
+   	@Column(value = "gender" )
+	private Integer gender;
 
-  public void setUserName(String userName) {
-    this.userName = userName;
-  }
+	/**
+	 * 年龄
+	 */
+   	@Column(value = "age" )
+	private Long age;
 
+	/**
+	 * 生日
+	 */
+   	@Column(value = "birthday" )
+	private Date birthday;
 
-  public long getGender() {
-    return gender;
-  }
+	/**
+	 * 电话
+	 */
+   	@Column(value = "tel" )
+	private String tel;
 
-  public void setGender(long gender) {
-    this.gender = gender;
-  }
+	/**
+	 * 邮箱
+	 */
+   	@Column(value = "email" )
+	private String email;
 
+	/**
+	 * 地址
+	 */
+   	@Column(value = "address" )
+	private String address;
 
-  public long getAge() {
-    return age;
-  }
+	/**
+	 * 身份证号
+	 */
+   	@Column(value = "id_num" )
+	private String idNum;
 
-  public void setAge(long age) {
-    this.age = age;
-  }
-
-
-  public java.util.Date getBirthday() {
-    return birthday;
-  }
-
-  public void setBirthday(java.util.Date birthday) {
-    this.birthday = birthday;
-  }
-
-
-  public String getTel() {
-    return tel;
-  }
-
-  public void setTel(String tel) {
-    this.tel = tel;
-  }
-
-
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-
-  public String getAddress() {
-    return address;
-  }
-
-  public void setAddress(String address) {
-    this.address = address;
-  }
-
-
-  public String getIdNum() {
-    return idNum;
-  }
-
-  public void setIdNum(String idNum) {
-    this.idNum = idNum;
-  }
-
-  public List<Privilege> getPrivileges() {
-    return privileges;
-  }
-
-  public void setPrivileges(List<Privilege> privileges) {
-    this.privileges = privileges;
-  }
-
-  public List<Menu> getMenus() {
-    return menus;
-  }
-
-  public void setMenus(List<Menu> menus) {
-    this.menus = menus;
-  }
-
-  public List<Folder> getFolders() {
-    return folders;
-  }
-
-  public void setFolders(List<Folder> folders) {
-    this.folders = folders;
-  }
-
-  public List<PageElements> getPageElements() {
-    return pageElements;
-  }
-
-  public void setPageElements(List<PageElements> pageElements) {
-    this.pageElements = pageElements;
-  }
 }

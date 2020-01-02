@@ -1,57 +1,42 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class Violations {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long violationsId;
-  private long bindId;
-  private long type;
-  private String concreteContent;
-  private java.util.Date violationsTime;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="violations" )
+public class Violations  implements Serializable {
 
+	private static final long serialVersionUID =  5197452265205863905L;
 
-  public long getViolationsId() {
-    return violationsId;
-  }
+   	@Column(value = "violations_id" )
+	private Long violationsId;
 
-  public void setViolationsId(long violationsId) {
-    this.violationsId = violationsId;
-  }
+   	@Column(value = "bind_id" )
+	private Long bindId;
 
+   	@Column(value = "type" )
+	private Integer type;
 
-  public long getBindId() {
-    return bindId;
-  }
+   	@Column(value = "concrete_content" )
+	private String concreteContent;
 
-  public void setBindId(long bindId) {
-    this.bindId = bindId;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
-
-
-  public String getConcreteContent() {
-    return concreteContent;
-  }
-
-  public void setConcreteContent(String concreteContent) {
-    this.concreteContent = concreteContent;
-  }
-
-
-  public java.util.Date getViolationsTime() {
-    return violationsTime;
-  }
-
-  public void setViolationsTime(java.util.Date violationsTime) {
-    this.violationsTime = violationsTime;
-  }
+   	@Column(value = "violations_time" )
+	private Date violationsTime;
 
 }

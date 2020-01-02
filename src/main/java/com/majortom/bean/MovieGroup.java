@@ -1,47 +1,38 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class MovieGroup {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long mGId;
-  private long mInfoId;
-  private long level;
-  private long yMoney;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="movie_group" )
+public class MovieGroup  implements Serializable {
 
+	private static final long serialVersionUID =  8740032103624225894L;
 
-  public long getMGId() {
-    return mGId;
-  }
+   	@Column(value = "m_g_id" )
+	private Long mGId;
 
-  public void setMGId(long mGId) {
-    this.mGId = mGId;
-  }
+   	@Column(value = "m_info_id" )
+	private Long mInfoId;
 
+   	@Column(value = "level" )
+	private Long level;
 
-  public long getMInfoId() {
-    return mInfoId;
-  }
-
-  public void setMInfoId(long mInfoId) {
-    this.mInfoId = mInfoId;
-  }
-
-
-  public long getLevel() {
-    return level;
-  }
-
-  public void setLevel(long level) {
-    this.level = level;
-  }
-
-
-  public long getYMoney() {
-    return yMoney;
-  }
-
-  public void setYMoney(long yMoney) {
-    this.yMoney = yMoney;
-  }
+   	@Column(value = "y_money" )
+	private Long yMoney;
 
 }

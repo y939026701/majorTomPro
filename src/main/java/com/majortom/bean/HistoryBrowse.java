@@ -1,57 +1,42 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class HistoryBrowse {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long hBId;
-  private long iId;
-  private long bindId;
-  private long type;
-  private java.util.Date browseTime;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="history_browse" )
+public class HistoryBrowse  implements Serializable {
 
+	private static final long serialVersionUID =  2819980748793855847L;
 
-  public long getHBId() {
-    return hBId;
-  }
+   	@Column(value = "h_b_id" )
+	private Long hBId;
 
-  public void setHBId(long hBId) {
-    this.hBId = hBId;
-  }
+   	@Column(value = "i_id" )
+	private Long iId;
 
+   	@Column(value = "bind_id" )
+	private Long bindId;
 
-  public long getIId() {
-    return iId;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
-  public void setIId(long iId) {
-    this.iId = iId;
-  }
-
-
-  public long getBindId() {
-    return bindId;
-  }
-
-  public void setBindId(long bindId) {
-    this.bindId = bindId;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
-
-
-  public java.util.Date getBrowseTime() {
-    return browseTime;
-  }
-
-  public void setBrowseTime(java.util.Date browseTime) {
-    this.browseTime = browseTime;
-  }
+   	@Column(value = "browse_time" )
+	private Date browseTime;
 
 }

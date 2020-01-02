@@ -1,47 +1,39 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class HistoryLog {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long hIId;
-  private long iId;
-  private java.util.Date logTime;
-  private long logIp;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="history_log" )
+public class HistoryLog  implements Serializable {
 
+	private static final long serialVersionUID =  1820854127864542169L;
 
-  public long getHIId() {
-    return hIId;
-  }
+   	@Column(value = "h_i_id" )
+	private Long hIId;
 
-  public void setHIId(long hIId) {
-    this.hIId = hIId;
-  }
+   	@Column(value = "i_id" )
+	private Long iId;
 
+   	@Column(value = "log_time" )
+	private Date logTime;
 
-  public long getIId() {
-    return iId;
-  }
-
-  public void setIId(long iId) {
-    this.iId = iId;
-  }
-
-
-  public java.util.Date getLogTime() {
-    return logTime;
-  }
-
-  public void setLogTime(java.util.Date logTime) {
-    this.logTime = logTime;
-  }
-
-
-  public long getLogIp() {
-    return logIp;
-  }
-
-  public void setLogIp(long logIp) {
-    this.logIp = logIp;
-  }
+   	@Column(value = "log_ip" )
+	private Long logIp;
 
 }

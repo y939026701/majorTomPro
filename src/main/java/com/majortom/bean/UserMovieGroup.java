@@ -1,37 +1,35 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class UserMovieGroup {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long iId;
-  private long mId;
-  private long type;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="user_movie_group" )
+public class UserMovieGroup  implements Serializable {
 
+	private static final long serialVersionUID =  4633794033615565487L;
 
-  public long getIId() {
-    return iId;
-  }
+   	@Column(value = "i_id" )
+	private Long iId;
 
-  public void setIId(long iId) {
-    this.iId = iId;
-  }
+   	@Column(value = "m_id" )
+	private Long mId;
 
-
-  public long getMId() {
-    return mId;
-  }
-
-  public void setMId(long mId) {
-    this.mId = mId;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
 }

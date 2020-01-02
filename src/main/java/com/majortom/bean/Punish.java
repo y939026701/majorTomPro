@@ -1,57 +1,42 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class Punish {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long punishId;
-  private long violationsId;
-  private java.util.Date time;
-  private long timeLength;
-  private long type;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="punish" )
+public class Punish  implements Serializable {
 
+	private static final long serialVersionUID =  8109339183102174621L;
 
-  public long getPunishId() {
-    return punishId;
-  }
+   	@Column(value = "punish_id" )
+	private Long punishId;
 
-  public void setPunishId(long punishId) {
-    this.punishId = punishId;
-  }
+   	@Column(value = "violations_id" )
+	private Long violationsId;
 
+   	@Column(value = "time" )
+	private Date time;
 
-  public long getViolationsId() {
-    return violationsId;
-  }
+   	@Column(value = "time_length" )
+	private Long timeLength;
 
-  public void setViolationsId(long violationsId) {
-    this.violationsId = violationsId;
-  }
-
-
-  public java.util.Date getTime() {
-    return time;
-  }
-
-  public void setTime(java.util.Date time) {
-    this.time = time;
-  }
-
-
-  public long getTimeLength() {
-    return timeLength;
-  }
-
-  public void setTimeLength(long timeLength) {
-    this.timeLength = timeLength;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
 }

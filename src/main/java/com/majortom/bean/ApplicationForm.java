@@ -1,37 +1,35 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class ApplicationForm {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long aFId;
-  private long bindId;
-  private long type;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="application_form" )
+public class ApplicationForm  implements Serializable {
 
+	private static final long serialVersionUID =  5642218496211029575L;
 
-  public long getAFId() {
-    return aFId;
-  }
+   	@Column(value = "a_f_id" )
+	private Long aFId;
 
-  public void setAFId(long aFId) {
-    this.aFId = aFId;
-  }
+   	@Column(value = "bind_id" )
+	private Long bindId;
 
-
-  public long getBindId() {
-    return bindId;
-  }
-
-  public void setBindId(long bindId) {
-    this.bindId = bindId;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
 }

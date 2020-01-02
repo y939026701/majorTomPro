@@ -1,57 +1,42 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class Following {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long followingId;
-  private long iId;
-  private long bindId;
-  private long type;
-  private java.util.Date time;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="following" )
+public class Following  implements Serializable {
 
+	private static final long serialVersionUID =  6255610161086436541L;
 
-  public long getFollowingId() {
-    return followingId;
-  }
+   	@Column(value = "following_id" )
+	private Long followingId;
 
-  public void setFollowingId(long followingId) {
-    this.followingId = followingId;
-  }
+   	@Column(value = "i_id" )
+	private Long iId;
 
+   	@Column(value = "bind_id" )
+	private Long bindId;
 
-  public long getIId() {
-    return iId;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
-  public void setIId(long iId) {
-    this.iId = iId;
-  }
-
-
-  public long getBindId() {
-    return bindId;
-  }
-
-  public void setBindId(long bindId) {
-    this.bindId = bindId;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
-
-
-  public java.util.Date getTime() {
-    return time;
-  }
-
-  public void setTime(java.util.Date time) {
-    this.time = time;
-  }
+   	@Column(value = "time" )
+	private Date time;
 
 }

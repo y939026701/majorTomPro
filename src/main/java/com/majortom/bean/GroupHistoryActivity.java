@@ -1,37 +1,35 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class GroupHistoryActivity {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long hAId;
-  private long mId;
-  private long aId;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="group_history_activity" )
+public class GroupHistoryActivity  implements Serializable {
 
+	private static final long serialVersionUID =  1287965904669057419L;
 
-  public long getHAId() {
-    return hAId;
-  }
+   	@Column(value = "h_a_id" )
+	private Long hAId;
 
-  public void setHAId(long hAId) {
-    this.hAId = hAId;
-  }
+   	@Column(value = "m_id" )
+	private Long mId;
 
-
-  public long getMId() {
-    return mId;
-  }
-
-  public void setMId(long mId) {
-    this.mId = mId;
-  }
-
-
-  public long getAId() {
-    return aId;
-  }
-
-  public void setAId(long aId) {
-    this.aId = aId;
-  }
+   	@Column(value = "a_id" )
+	private Long aId;
 
 }

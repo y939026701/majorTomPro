@@ -1,57 +1,42 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class HistoryActivity {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long hAId;
-  private long aId;
-  private long iId;
-  private java.util.Date hATime;
-  private long type;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="history_activity" )
+public class HistoryActivity  implements Serializable {
 
+	private static final long serialVersionUID =  5194823451629546921L;
 
-  public long getHAId() {
-    return hAId;
-  }
+   	@Column(value = "h_a_id" )
+	private Long hAId;
 
-  public void setHAId(long hAId) {
-    this.hAId = hAId;
-  }
+   	@Column(value = "a_id" )
+	private Long aId;
 
+   	@Column(value = "i_id" )
+	private Long iId;
 
-  public long getAId() {
-    return aId;
-  }
+   	@Column(value = "h_a_time" )
+	private Date hATime;
 
-  public void setAId(long aId) {
-    this.aId = aId;
-  }
-
-
-  public long getIId() {
-    return iId;
-  }
-
-  public void setIId(long iId) {
-    this.iId = iId;
-  }
-
-
-  public java.util.Date getHATime() {
-    return hATime;
-  }
-
-  public void setHATime(java.util.Date hATime) {
-    this.hATime = hATime;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
 }

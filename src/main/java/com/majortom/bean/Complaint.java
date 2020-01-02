@@ -1,67 +1,44 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class Complaint {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long complaintId;
-  private long toComplaintId;
-  private long bindId;
-  private long type;
-  private long contentId;
-  private long dispose;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="complaint" )
+public class Complaint  implements Serializable {
 
+	private static final long serialVersionUID =  7923302722922832858L;
 
-  public long getComplaintId() {
-    return complaintId;
-  }
+   	@Column(value = "complaint_id" )
+	private Long complaintId;
 
-  public void setComplaintId(long complaintId) {
-    this.complaintId = complaintId;
-  }
+   	@Column(value = "to_complaint_id" )
+	private Long toComplaintId;
 
+   	@Column(value = "bind_id" )
+	private Long bindId;
 
-  public long getToComplaintId() {
-    return toComplaintId;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
-  public void setToComplaintId(long toComplaintId) {
-    this.toComplaintId = toComplaintId;
-  }
+   	@Column(value = "content_id" )
+	private Long contentId;
 
-
-  public long getBindId() {
-    return bindId;
-  }
-
-  public void setBindId(long bindId) {
-    this.bindId = bindId;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
-
-
-  public long getContentId() {
-    return contentId;
-  }
-
-  public void setContentId(long contentId) {
-    this.contentId = contentId;
-  }
-
-
-  public long getDispose() {
-    return dispose;
-  }
-
-  public void setDispose(long dispose) {
-    this.dispose = dispose;
-  }
+   	@Column(value = "dispose" )
+	private Integer dispose;
 
 }
