@@ -1,47 +1,38 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class Question {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long questionId;
-  private String questionText;
-  private String contentText;
-  private long type;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="question" )
+public class Question  implements Serializable {
 
+	private static final long serialVersionUID =  4187614288389832528L;
 
-  public long getQuestionId() {
-    return questionId;
-  }
+   	@Column(value = "question_id" )
+	private Long questionId;
 
-  public void setQuestionId(long questionId) {
-    this.questionId = questionId;
-  }
+   	@Column(value = "question_text" )
+	private String questionText;
 
+   	@Column(value = "content_text" )
+	private String contentText;
 
-  public String getQuestionText() {
-    return questionText;
-  }
-
-  public void setQuestionText(String questionText) {
-    this.questionText = questionText;
-  }
-
-
-  public String getContentText() {
-    return contentText;
-  }
-
-  public void setContentText(String contentText) {
-    this.contentText = contentText;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
 }

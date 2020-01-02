@@ -1,67 +1,45 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class Collection {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long collectionId;
-  private long iId;
-  private long type;
-  private long folderId;
-  private java.util.Date time;
-  private long bindId;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="collection" )
+public class Collection  implements Serializable {
 
+	private static final long serialVersionUID =  5105962246847435959L;
 
-  public long getCollectionId() {
-    return collectionId;
-  }
+   	@Column(value = "collection_id" )
+	private Long collectionId;
 
-  public void setCollectionId(long collectionId) {
-    this.collectionId = collectionId;
-  }
+   	@Column(value = "i_id" )
+	private Long iId;
 
+   	@Column(value = "type" )
+	private Integer type;
 
-  public long getIId() {
-    return iId;
-  }
+   	@Column(value = "folder_id" )
+	private Long folderId;
 
-  public void setIId(long iId) {
-    this.iId = iId;
-  }
+   	@Column(value = "time" )
+	private Date time;
 
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
-
-
-  public long getFolderId() {
-    return folderId;
-  }
-
-  public void setFolderId(long folderId) {
-    this.folderId = folderId;
-  }
-
-
-  public java.util.Date getTime() {
-    return time;
-  }
-
-  public void setTime(java.util.Date time) {
-    this.time = time;
-  }
-
-
-  public long getBindId() {
-    return bindId;
-  }
-
-  public void setBindId(long bindId) {
-    this.bindId = bindId;
-  }
+   	@Column(value = "bind_id" )
+	private Long bindId;
 
 }

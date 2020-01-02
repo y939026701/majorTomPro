@@ -1,97 +1,54 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class Identification {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long iId;
-  private long userId;
-  private long cIId;
-  private String nickName;
-  private String password;
-  private long level;
-  private String autograph;
-  private java.util.Date registerTime;
-  private long yMoney;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="identification" )
+public class Identification  implements Serializable {
 
+	private static final long serialVersionUID =  2735392111656771281L;
 
-  public long getIId() {
-    return iId;
-  }
+   	@Column(value = "i_id" )
+	private Long iId;
 
-  public void setIId(long iId) {
-    this.iId = iId;
-  }
+   	@Column(value = "user_id" )
+	private Long userId;
 
+   	@Column(value = "c_i_id" )
+	private Long cIId;
 
-  public long getUserId() {
-    return userId;
-  }
+   	@Column(value = "nick_name" )
+	private String nickName;
 
-  public void setUserId(long userId) {
-    this.userId = userId;
-  }
+   	@Column(value = "password" )
+	private String password;
 
+   	@Column(value = "level" )
+	private Long level;
 
-  public long getCIId() {
-    return cIId;
-  }
+   	@Column(value = "autograph" )
+	private String autograph;
 
-  public void setCIId(long cIId) {
-    this.cIId = cIId;
-  }
+   	@Column(value = "register_time" )
+	private Date registerTime;
 
-
-  public String getNickName() {
-    return nickName;
-  }
-
-  public void setNickName(String nickName) {
-    this.nickName = nickName;
-  }
-
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-
-  public long getLevel() {
-    return level;
-  }
-
-  public void setLevel(long level) {
-    this.level = level;
-  }
-
-
-  public String getAutograph() {
-    return autograph;
-  }
-
-  public void setAutograph(String autograph) {
-    this.autograph = autograph;
-  }
-
-
-  public java.util.Date getRegisterTime() {
-    return registerTime;
-  }
-
-  public void setRegisterTime(java.util.Date registerTime) {
-    this.registerTime = registerTime;
-  }
-
-
-  public long getYMoney() {
-    return yMoney;
-  }
-
-  public void setYMoney(long yMoney) {
-    this.yMoney = yMoney;
-  }
+   	@Column(value = "y_money" )
+	private Long yMoney;
 
 }

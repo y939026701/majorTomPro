@@ -1,57 +1,41 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class Participant {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long participanId;
-  private long iId;
-  private long aId;
-  private long aFId;
-  private long type;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="participant" )
+public class Participant  implements Serializable {
 
+	private static final long serialVersionUID =  4104703099359188755L;
 
-  public long getParticipanId() {
-    return participanId;
-  }
+   	@Column(value = "participan_id" )
+	private Long participanId;
 
-  public void setParticipanId(long participanId) {
-    this.participanId = participanId;
-  }
+   	@Column(value = "i_id" )
+	private Long iId;
 
+   	@Column(value = "a_id" )
+	private Long aId;
 
-  public long getIId() {
-    return iId;
-  }
+   	@Column(value = "a_f_id" )
+	private Long aFId;
 
-  public void setIId(long iId) {
-    this.iId = iId;
-  }
-
-
-  public long getAId() {
-    return aId;
-  }
-
-  public void setAId(long aId) {
-    this.aId = aId;
-  }
-
-
-  public long getAFId() {
-    return aFId;
-  }
-
-  public void setAFId(long aFId) {
-    this.aFId = aFId;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
 }

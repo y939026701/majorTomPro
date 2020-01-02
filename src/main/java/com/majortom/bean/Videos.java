@@ -1,47 +1,38 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class Videos {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long vId;
-  private long cIId;
-  private String name;
-  private String intro;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="videos" )
+public class Videos  implements Serializable {
 
+	private static final long serialVersionUID =  847750814496887329L;
 
-  public long getVId() {
-    return vId;
-  }
+   	@Column(value = "v_id" )
+	private Long vId;
 
-  public void setVId(long vId) {
-    this.vId = vId;
-  }
+   	@Column(value = "c_i_id" )
+	private Long cIId;
 
+   	@Column(value = "name" )
+	private String name;
 
-  public long getCIId() {
-    return cIId;
-  }
-
-  public void setCIId(long cIId) {
-    this.cIId = cIId;
-  }
-
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public String getIntro() {
-    return intro;
-  }
-
-  public void setIntro(String intro) {
-    this.intro = intro;
-  }
+   	@Column(value = "intro" )
+	private String intro;
 
 }

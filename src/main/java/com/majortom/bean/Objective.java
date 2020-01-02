@@ -1,117 +1,59 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class Objective {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long sSId;
-  private String questionText;
-  private String choiceA;
-  private long scoreA;
-  private String choiceB;
-  private long scoreB;
-  private String choiceC;
-  private long scoreC;
-  private String choiceD;
-  private long scoreD;
-  private long type;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="objective" )
+public class Objective  implements Serializable {
 
+	private static final long serialVersionUID =  7388683347473745861L;
 
-  public long getSSId() {
-    return sSId;
-  }
+   	@Column(value = "s_s_id" )
+	private Long sSId;
 
-  public void setSSId(long sSId) {
-    this.sSId = sSId;
-  }
+   	@Column(value = "question_text" )
+	private String questionText;
 
+   	@Column(value = "choice_a" )
+	private String choiceA;
 
-  public String getQuestionText() {
-    return questionText;
-  }
+   	@Column(value = "score_a" )
+	private Long scoreA;
 
-  public void setQuestionText(String questionText) {
-    this.questionText = questionText;
-  }
+   	@Column(value = "choice_b" )
+	private String choiceB;
 
+   	@Column(value = "score_b" )
+	private Long scoreB;
 
-  public String getChoiceA() {
-    return choiceA;
-  }
+   	@Column(value = "choice_c" )
+	private String choiceC;
 
-  public void setChoiceA(String choiceA) {
-    this.choiceA = choiceA;
-  }
+   	@Column(value = "score_c" )
+	private Long scoreC;
 
+   	@Column(value = "choice_d" )
+	private String choiceD;
 
-  public long getScoreA() {
-    return scoreA;
-  }
+   	@Column(value = "score_d" )
+	private Long scoreD;
 
-  public void setScoreA(long scoreA) {
-    this.scoreA = scoreA;
-  }
-
-
-  public String getChoiceB() {
-    return choiceB;
-  }
-
-  public void setChoiceB(String choiceB) {
-    this.choiceB = choiceB;
-  }
-
-
-  public long getScoreB() {
-    return scoreB;
-  }
-
-  public void setScoreB(long scoreB) {
-    this.scoreB = scoreB;
-  }
-
-
-  public String getChoiceC() {
-    return choiceC;
-  }
-
-  public void setChoiceC(String choiceC) {
-    this.choiceC = choiceC;
-  }
-
-
-  public long getScoreC() {
-    return scoreC;
-  }
-
-  public void setScoreC(long scoreC) {
-    this.scoreC = scoreC;
-  }
-
-
-  public String getChoiceD() {
-    return choiceD;
-  }
-
-  public void setChoiceD(String choiceD) {
-    this.choiceD = choiceD;
-  }
-
-
-  public long getScoreD() {
-    return scoreD;
-  }
-
-  public void setScoreD(long scoreD) {
-    this.scoreD = scoreD;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
 }

@@ -1,57 +1,57 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class Role {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long roleId;
-  private String name;
-  private String displayName;
-  private java.util.Date createData;
-  private String description;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="role" )
+public class Role  implements Serializable {
 
+	private static final long serialVersionUID =  3355175654679902349L;
 
-  public long getRoleId() {
-    return roleId;
-  }
+	/**
+	 * id
+	 */
+   	@Column(value = "role_id" )
+	private Long roleId;
 
-  public void setRoleId(long roleId) {
-    this.roleId = roleId;
-  }
+	/**
+	 * 名称
+	 */
+   	@Column(value = "name" )
+	private String name;
 
+	/**
+	 * 显示名
+	 */
+   	@Column(value = "display_name" )
+	private String displayName;
 
-  public String getName() {
-    return name;
-  }
+	/**
+	 * 创建时间
+	 */
+   	@Column(value = "create_data" )
+	private Date createData;
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public String getDisplayName() {
-    return displayName;
-  }
-
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
-  }
-
-
-  public java.util.Date getCreateData() {
-    return createData;
-  }
-
-  public void setCreateData(java.util.Date createData) {
-    this.createData = createData;
-  }
-
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
+	/**
+	 * 描述
+	 */
+   	@Column(value = "description" )
+	private String description;
 
 }

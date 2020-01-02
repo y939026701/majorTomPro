@@ -1,47 +1,38 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class Menu {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long menuId;
-  private String name;
-  private String menuUrl;
-  private long parentId;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="menu" )
+public class Menu  implements Serializable {
 
+	private static final long serialVersionUID =  8416684771397578514L;
 
-  public long getMenuId() {
-    return menuId;
-  }
+   	@Column(value = "menu_id" )
+	private Long menuId;
 
-  public void setMenuId(long menuId) {
-    this.menuId = menuId;
-  }
+   	@Column(value = "name" )
+	private String name;
 
+   	@Column(value = "menu_url" )
+	private String menuUrl;
 
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public String getMenuUrl() {
-    return menuUrl;
-  }
-
-  public void setMenuUrl(String menuUrl) {
-    this.menuUrl = menuUrl;
-  }
-
-
-  public long getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(long parentId) {
-    this.parentId = parentId;
-  }
+   	@Column(value = "parent_id" )
+	private Long parentId;
 
 }

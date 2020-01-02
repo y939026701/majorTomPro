@@ -1,77 +1,48 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class MovieGroupInfo {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long mInfoId;
-  private long cIId;
-  private String name;
-  private String autograph;
-  private String synopsis;
-  private java.util.Date registerTime;
-  private String activeCity;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="movie_group_info" )
+public class MovieGroupInfo  implements Serializable {
 
+	private static final long serialVersionUID =  6102372783683404769L;
 
-  public long getMInfoId() {
-    return mInfoId;
-  }
+   	@Column(value = "m_info_id" )
+	private Long mInfoId;
 
-  public void setMInfoId(long mInfoId) {
-    this.mInfoId = mInfoId;
-  }
+   	@Column(value = "c_i_id" )
+	private Long cIId;
 
+   	@Column(value = "name" )
+	private String name;
 
-  public long getCIId() {
-    return cIId;
-  }
+   	@Column(value = "autograph" )
+	private String autograph;
 
-  public void setCIId(long cIId) {
-    this.cIId = cIId;
-  }
+   	@Column(value = "synopsis" )
+	private String synopsis;
 
+   	@Column(value = "register_time" )
+	private Date registerTime;
 
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public String getAutograph() {
-    return autograph;
-  }
-
-  public void setAutograph(String autograph) {
-    this.autograph = autograph;
-  }
-
-
-  public String getSynopsis() {
-    return synopsis;
-  }
-
-  public void setSynopsis(String synopsis) {
-    this.synopsis = synopsis;
-  }
-
-
-  public java.util.Date getRegisterTime() {
-    return registerTime;
-  }
-
-  public void setRegisterTime(java.util.Date registerTime) {
-    this.registerTime = registerTime;
-  }
-
-
-  public String getActiveCity() {
-    return activeCity;
-  }
-
-  public void setActiveCity(String activeCity) {
-    this.activeCity = activeCity;
-  }
+   	@Column(value = "active_city" )
+	private String activeCity;
 
 }

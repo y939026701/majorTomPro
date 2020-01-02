@@ -1,60 +1,56 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
- * @author 李文海
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
  */
-public class Achievement {
 
-  private long achievementId;
-  private long iId;
-  private String name;
-  private String description;
-  private long state;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="achievement" )
+public class Achievement  implements Serializable {
 
+	private static final long serialVersionUID =  3515112331851572844L;
 
-  public long getAchievementId() {
-    return achievementId;
-  }
+	/**
+	 * 成就表id
+	 */
+   	@Column(value = "achievement_id" )
+	private Long achievementId;
 
-  public void setAchievementId(long achievementId) {
-    this.achievementId = achievementId;
-  }
+	/**
+	 * 用户id
+	 */
+   	@Column(value = "i_id" )
+	private Long iId;
 
+	/**
+	 * 成就名称
+	 */
+   	@Column(value = "name" )
+	private String name;
 
-  public long getIId() {
-    return iId;
-  }
+	/**
+	 * 描述
+	 */
+   	@Column(value = "description" )
+	private String description;
 
-  public void setIId(long iId) {
-    this.iId = iId;
-  }
-
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-
-  public long getState() {
-    return state;
-  }
-
-  public void setState(long state) {
-    this.state = state;
-  }
+	/**
+	 * 状态
+	 */
+   	@Column(value = "state" )
+	private Integer state;
 
 }

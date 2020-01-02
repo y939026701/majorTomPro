@@ -1,27 +1,32 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class UserConfig {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long uCId;
-  private long iId;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="user_config" )
+public class UserConfig  implements Serializable {
 
+	private static final long serialVersionUID =  5742852665761000922L;
 
-  public long getUCId() {
-    return uCId;
-  }
+   	@Column(value = "u_c_id" )
+	private Long uCId;
 
-  public void setUCId(long uCId) {
-    this.uCId = uCId;
-  }
-
-
-  public long getIId() {
-    return iId;
-  }
-
-  public void setIId(long iId) {
-    this.iId = iId;
-  }
+   	@Column(value = "i_id" )
+	private Long iId;
 
 }

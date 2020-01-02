@@ -1,37 +1,35 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-public class Privilege {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long pId;
-  private String type;
-  private String description;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="privilege" )
+public class Privilege  implements Serializable {
 
+	private static final long serialVersionUID =  3927494618522044236L;
 
-  public long getPId() {
-    return pId;
-  }
+   	@Column(value = "p_id" )
+	private Long pId;
 
-  public void setPId(long pId) {
-    this.pId = pId;
-  }
+   	@Column(value = "type" )
+	private String type;
 
-
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
+   	@Column(value = "description" )
+	private String description;
 
 }

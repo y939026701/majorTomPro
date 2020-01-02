@@ -1,157 +1,117 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class Activity {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long aId;
-  private long mId;
-  private long vId;
-  private long participanId;
-  private String title;
-  private java.util.Date strartTime;
-  private java.util.Date strartApplyTime;
-  private java.util.Date endApplyTime;
-  private java.util.Date endTime;
-  private java.util.Date movieStrartTime;
-  private long moiveLength;
-  private java.util.Date moveEndTime;
-  private String city;
-  private String cinemaAddress;
-  private long places;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="activity" )
+public class Activity  implements Serializable {
 
+	private static final long serialVersionUID =  6434935341851056920L;
 
-  public long getAId() {
-    return aId;
-  }
+	/**
+	 * 活动id
+	 */
+   	@Column(value = "a_id" )
+	private Long aId;
 
-  public void setAId(long aId) {
-    this.aId = aId;
-  }
+	/**
+	 * 观影团id
+	 */
+   	@Column(value = "m_id" )
+	private Long mId;
 
+	/**
+	 * 影片id
+	 */
+   	@Column(value = "v_id" )
+	private Long vId;
 
-  public long getMId() {
-    return mId;
-  }
+	/**
+	 * 参与者id
+	 */
+   	@Column(value = "participan_id" )
+	private Long participanId;
 
-  public void setMId(long mId) {
-    this.mId = mId;
-  }
+	/**
+	 * 标题
+	 */
+   	@Column(value = "title" )
+	private String title;
 
+	/**
+	 * 活动开始时间
+	 */
+   	@Column(value = "strart_time" )
+	private Date strartTime;
 
-  public long getVId() {
-    return vId;
-  }
+	/**
+	 * 报名开始时间
+	 */
+   	@Column(value = "strart_apply_time" )
+	private Date strartApplyTime;
 
-  public void setVId(long vId) {
-    this.vId = vId;
-  }
+	/**
+	 * 报名结束时间
+	 */
+   	@Column(value = "end_apply_time" )
+	private Date endApplyTime;
 
+	/**
+	 * 活动结束时间
+	 */
+   	@Column(value = "end_time" )
+	private Date endTime;
 
-  public long getParticipanId() {
-    return participanId;
-  }
+	/**
+	 * 电影开始时间
+	 */
+   	@Column(value = "movie_strart_time" )
+	private Date movieStrartTime;
 
-  public void setParticipanId(long participanId) {
-    this.participanId = participanId;
-  }
+	/**
+	 * 影片时长
+	 */
+   	@Column(value = "moive_length" )
+	private Long moiveLength;
 
+	/**
+	 * 电影结束时间
+	 */
+   	@Column(value = "move_end_time" )
+	private Date moveEndTime;
 
-  public String getTitle() {
-    return title;
-  }
+	/**
+	 * 所在城市
+	 */
+   	@Column(value = "city" )
+	private String city;
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+	/**
+	 * 影院地址
+	 */
+   	@Column(value = "cinema_address" )
+	private String cinemaAddress;
 
-
-  public java.util.Date getStrartTime() {
-    return strartTime;
-  }
-
-  public void setStrartTime(java.util.Date strartTime) {
-    this.strartTime = strartTime;
-  }
-
-
-  public java.util.Date getStrartApplyTime() {
-    return strartApplyTime;
-  }
-
-  public void setStrartApplyTime(java.util.Date strartApplyTime) {
-    this.strartApplyTime = strartApplyTime;
-  }
-
-
-  public java.util.Date getEndApplyTime() {
-    return endApplyTime;
-  }
-
-  public void setEndApplyTime(java.util.Date endApplyTime) {
-    this.endApplyTime = endApplyTime;
-  }
-
-
-  public java.util.Date getEndTime() {
-    return endTime;
-  }
-
-  public void setEndTime(java.util.Date endTime) {
-    this.endTime = endTime;
-  }
-
-
-  public java.util.Date getMovieStrartTime() {
-    return movieStrartTime;
-  }
-
-  public void setMovieStrartTime(java.util.Date movieStrartTime) {
-    this.movieStrartTime = movieStrartTime;
-  }
-
-
-  public long getMoiveLength() {
-    return moiveLength;
-  }
-
-  public void setMoiveLength(long moiveLength) {
-    this.moiveLength = moiveLength;
-  }
-
-
-  public java.util.Date getMoveEndTime() {
-    return moveEndTime;
-  }
-
-  public void setMoveEndTime(java.util.Date moveEndTime) {
-    this.moveEndTime = moveEndTime;
-  }
-
-
-  public String getCity() {
-    return city;
-  }
-
-  public void setCity(String city) {
-    this.city = city;
-  }
-
-
-  public String getCinemaAddress() {
-    return cinemaAddress;
-  }
-
-  public void setCinemaAddress(String cinemaAddress) {
-    this.cinemaAddress = cinemaAddress;
-  }
-
-
-  public long getPlaces() {
-    return places;
-  }
-
-  public void setPlaces(long places) {
-    this.places = places;
-  }
+	/**
+	 * 名额
+	 */
+   	@Column(value = "places" )
+	private Long places;
 
 }

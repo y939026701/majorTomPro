@@ -1,87 +1,51 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class Expression {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long expressionId;
-  private long bindId;
-  private java.util.Date publishTime;
-  private String contentText;
-  private long commentCount;
-  private long likedCount;
-  private long forwardCount;
-  private long type;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="expression" )
+public class Expression  implements Serializable {
 
+	private static final long serialVersionUID =  5548472107880578110L;
 
-  public long getExpressionId() {
-    return expressionId;
-  }
+   	@Column(value = "expression_id" )
+	private Long expressionId;
 
-  public void setExpressionId(long expressionId) {
-    this.expressionId = expressionId;
-  }
+   	@Column(value = "bind_id" )
+	private Long bindId;
 
+   	@Column(value = "publish_time" )
+	private Date publishTime;
 
-  public long getBindId() {
-    return bindId;
-  }
+   	@Column(value = "content_text" )
+	private String contentText;
 
-  public void setBindId(long bindId) {
-    this.bindId = bindId;
-  }
+   	@Column(value = "comment_count" )
+	private Long commentCount;
 
+   	@Column(value = "liked_count" )
+	private Long likedCount;
 
-  public java.util.Date getPublishTime() {
-    return publishTime;
-  }
+   	@Column(value = "forward_count" )
+	private Long forwardCount;
 
-  public void setPublishTime(java.util.Date publishTime) {
-    this.publishTime = publishTime;
-  }
-
-
-  public String getContentText() {
-    return contentText;
-  }
-
-  public void setContentText(String contentText) {
-    this.contentText = contentText;
-  }
-
-
-  public long getCommentCount() {
-    return commentCount;
-  }
-
-  public void setCommentCount(long commentCount) {
-    this.commentCount = commentCount;
-  }
-
-
-  public long getLikedCount() {
-    return likedCount;
-  }
-
-  public void setLikedCount(long likedCount) {
-    this.likedCount = likedCount;
-  }
-
-
-  public long getForwardCount() {
-    return forwardCount;
-  }
-
-  public void setForwardCount(long forwardCount) {
-    this.forwardCount = forwardCount;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
 }

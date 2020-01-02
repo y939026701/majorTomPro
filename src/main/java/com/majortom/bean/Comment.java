@@ -1,77 +1,48 @@
 package com.majortom.bean;
 
+import com.xuetang9.commons.jdbc.annotations.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import java.util.Date;
 
-public class Comment {
+/**
+ * @Description  
+ * @Author  Hunter
+ * @Date 2020-01-02 
+ */
 
-  private long commentId;
-  private long bindId;
-  private long publishId;
-  private String contentText;
-  private java.util.Date publishTime;
-  private long likedCount;
-  private long type;
+@Setter
+@Getter
+@ToString
+@Entity
+@Table ( name ="comment" )
+public class Comment  implements Serializable {
 
+	private static final long serialVersionUID =  6572658164917688186L;
 
-  public long getCommentId() {
-    return commentId;
-  }
+   	@Column(value = "comment_id" )
+	private Long commentId;
 
-  public void setCommentId(long commentId) {
-    this.commentId = commentId;
-  }
+   	@Column(value = "bind_id" )
+	private Long bindId;
 
+   	@Column(value = "publish_id" )
+	private Long publishId;
 
-  public long getBindId() {
-    return bindId;
-  }
+   	@Column(value = "content_text" )
+	private String contentText;
 
-  public void setBindId(long bindId) {
-    this.bindId = bindId;
-  }
+   	@Column(value = "publish_time" )
+	private Date publishTime;
 
+   	@Column(value = "liked_count" )
+	private Long likedCount;
 
-  public long getPublishId() {
-    return publishId;
-  }
-
-  public void setPublishId(long publishId) {
-    this.publishId = publishId;
-  }
-
-
-  public String getContentText() {
-    return contentText;
-  }
-
-  public void setContentText(String contentText) {
-    this.contentText = contentText;
-  }
-
-
-  public java.util.Date getPublishTime() {
-    return publishTime;
-  }
-
-  public void setPublishTime(java.util.Date publishTime) {
-    this.publishTime = publishTime;
-  }
-
-
-  public long getLikedCount() {
-    return likedCount;
-  }
-
-  public void setLikedCount(long likedCount) {
-    this.likedCount = likedCount;
-  }
-
-
-  public long getType() {
-    return type;
-  }
-
-  public void setType(long type) {
-    this.type = type;
-  }
+   	@Column(value = "type" )
+	private Integer type;
 
 }
